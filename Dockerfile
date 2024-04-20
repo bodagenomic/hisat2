@@ -11,12 +11,12 @@ RUN apk update && apk upgrade && \
 	unzip hisat2-2.2.1-Linux_x86_64.zip && \
 	mv hisat2-2.2.1 /opt/ && \
 	echo "export PATH=/opt/hisat2-2.2.1:$PATH" >~/.bashrc && \
-	pip install click && \
-	pip install pysam && \
-	pip install HTSeq && \
 	git clone https://github.com/samtools/samtools.git && \
 	cd samtools && \
 	./configure && \
     make && \
-    make install
+    make install && \
+	pip install click && \
+	pip install HTSeq && \
+	pip install pysam && \
 
