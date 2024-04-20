@@ -9,7 +9,7 @@ ADD https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.ta
 
 
 RUN apk update && apk upgrade && \
-	apk add --virtual build-dependencies build-base gcc make curl wget zlib-dev bzip2-devel tar ncurses-dev && \
+	apk add --virtual build-dependencies build-base gcc make curl wget zlib-dev libzip-dev tar ncurses-dev && \
 	curl -o hisat2-2.2.1-Linux_x86_64.zip https://cloud.biohpc.swmed.edu/index.php/s/oTtGWbWjaxsQ2Ho/download && \
 	unzip hisat2-2.2.1-Linux_x86_64.zip && \
 	mv hisat2-2.2.1 /opt/ && \
