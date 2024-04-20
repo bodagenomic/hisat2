@@ -14,8 +14,8 @@ RUN apk update && apk upgrade && \
 	git clone https://github.com/samtools/samtools.git && \
 	cd samtools && \
 	./configure && \
-    make && \
-    make install && \
+	make && \
+	make install && \
 	pip install click && \
 	pip install HTSeq && \
 	pip install pysam && \
