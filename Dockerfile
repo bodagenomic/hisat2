@@ -18,5 +18,5 @@ RUN apk update && apk upgrade && \
 	make install && \
 	pip install click && \
 	pip install HTSeq && \
-	pip install pysam && \
+	pip install pysam
 
