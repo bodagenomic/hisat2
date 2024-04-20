@@ -11,9 +11,8 @@ RUN apk update && apk upgrade && \
 	unzip hisat2-2.2.1-Linux_x86_64.zip && \
 	mv hisat2-2.2.1 /opt/
 
-RUN curl -o samtools-1.20.tar.bz2 https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2 && \
-	tar -jxvf samtools-1.20.tar.bz2 && \
-	cd samtools-1.20.tar.bz2 && \
+RUN curl -o samtools-1.20.tar.bz2 https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2 | -jxvf && \
+	cd samtools-1.20 && \
 	./configure --prefix=/opt/samtools/ && \
 	make && \
 	make install
