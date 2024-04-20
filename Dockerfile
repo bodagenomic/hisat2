@@ -12,8 +12,7 @@ RUN apk update && apk upgrade && \
 	mv hisat2-2.2.1 /opt/
 
 ADD https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2 ./
-RUN chmod 755 samtools-1.20.tar.bz2 && \
-	ls -la . && \
+RUN ls -la . && \
 	tar -jxvf samtools-1.20.tar.bz2 && \
 	cd samtools-1.20 && \
 	./configure --prefix=/opt/samtools/ && \
