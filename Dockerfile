@@ -23,5 +23,6 @@ RUN apk update && apk upgrade && \
 	ls -l /opt/samtools && \
 	pip install click && \
 	pip install HTSeq && \
-	pip install pysam
+	pip install pysam && \
+	pip install RSeQC
 
