@@ -7,7 +7,6 @@ WORKDIR /tmp
 
 ADD https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2 ./
 
-
 RUN apk update && apk upgrade && \
 	apk add --virtual build-dependencies build-base gcc make curl wget zlib-dev libzip-dev tar ncurses-dev && \
 	curl -o hisat2-2.2.1-Linux_x86_64.zip https://cloud.biohpc.swmed.edu/index.php/s/oTtGWbWjaxsQ2Ho/download && \
@@ -19,10 +18,10 @@ RUN apk update && apk upgrade && \
 	./configure --prefix=/opt/samtools/ && \
 	make && \
 	make install && \
-	echo "export PATH=/opt/hisat2-2.2.1:/opt/samtools:$PATH" >~/.bashrc && \
 	ls -l /opt/samtools && \
 	pip install click && \
 	pip install HTSeq && \
 	pip install pysam && \
 	pip install RSeQC
 
+RUN	PATH=/opt/hisat2-2.2.1/:/opt/samtools/bin:$PATH && export PATH
