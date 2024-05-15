@@ -24,4 +24,6 @@ RUN apk update && apk upgrade && \
 	pip install pysam && \
 	pip install RSeQC
 
-RUN	PATH=/opt/hisat2-2.2.1/:/opt/samtools/bin:$PATH && export PATH
+RUN PATH="/opt/hisat2-2.2.1/:/opt/samtools/bin:$PATH"
+RUN export PATH
+
